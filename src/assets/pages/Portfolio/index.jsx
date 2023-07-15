@@ -1,5 +1,6 @@
 import React from 'react'
-import Proyek from '../../components/proyek'
+import Proyek from '../../components/proyek.jsx'
+
 
 const projek = [
     {
