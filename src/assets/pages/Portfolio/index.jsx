@@ -1,5 +1,5 @@
 import React from 'react'
-import Proyek from '../../components/proyek.jsx'
+import proyek from '../../components/proyek'
 
 
 const projek = [
@@ -32,7 +32,7 @@ const Portfolio = () => {
         <div className='w-full px-4 flex flex-wrap justify-center xl:mx-auto gap-1'>
           {
             projek.map((val)=>{
-               return <Proyek key={val.id} judul={val.judul} deskripsi={val.deskripsi} url={val.url}/>
+               return <proyek key={val.id} judul={val.judul} deskripsi={val.deskripsi} url={val.url}/>
             })
           }
         </div>
