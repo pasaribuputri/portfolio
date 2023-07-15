@@ -1,6 +1,5 @@
 import React from 'react'
-import Proyek from '../../components/proyek'
-
+import Proyek from '../../components/Proyek'
 
 const projek = [
     {
@@ -33,6 +32,7 @@ const Portfolio = () => {
           {
             projek.map((val)=>{
                return <Proyek key={val.id} judul={val.judul} deskripsi={val.deskripsi} url={val.url}/>
+              
             })
           }
         </div>

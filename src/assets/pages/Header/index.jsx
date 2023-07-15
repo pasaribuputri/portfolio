@@ -32,16 +32,16 @@ const [isActive, setIsActive] = useState(false);
             <nav id='nav-menu' className= {navMel}>
               <ul className='block lg:flex'>
                 <li className='group'>
-                  <NavLink to='/'><a className='text-base text-dark py-2 mx-8 flex group-hover:text-primary'>Beranda</a></NavLink>
+                  <NavLink to='/' className='text-base text-dark py-2 mx-8 flex group-hover:text-primary'>Beranda</NavLink>
                 </li>
                 <li className='group'>
-                  <NavLink to='/about'><a className='text-base text-dark py-2 mx-8 flex group-hover:text-primary'>About Me</a></NavLink>
+                  <NavLink to='/about' className='text-base text-dark py-2 mx-8 flex group-hover:text-primary'>About Me</NavLink>
                 </li>
                 <li className='group'>
-                  <NavLink to='/portfolio'><a href="#portfolio" className='text-base text-dark py-2 mx-8 flex group-hover:text-primary'>Portfolio</a></NavLink>
+                  <NavLink to='/portfolio' className='text-base text-dark py-2 mx-8 flex group-hover:text-primary'>Portfolio</NavLink>
                 </li>
                 <li className='group'>
-                  <NavLink to='/kontak'><a className='text-base text-dark py-2 mx-8 flex group-hover:text-primary'>Contact</a></NavLink>
+                  <NavLink to='/kontak' className='text-base text-dark py-2 mx-8 flex group-hover:text-primary'>Contact</NavLink>
                 </li>
               </ul>
             </nav>

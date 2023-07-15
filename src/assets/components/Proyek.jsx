@@ -1,6 +1,6 @@
 import React from 'react'
 
-const proyek = (props) => {
+const Proyek = (props) => {
   return (
     <div className="mb-12 p-4 md:w-1/2 bg-slate-300 rounded-lg">
         <h3 className='font-semibold text-xl text-dark mt-5 mb-3 text-center'>{props.judul}</h3>
@@ -10,4 +10,4 @@ const proyek = (props) => {
   )
 }
 
-export default proyek
+export default Proyek
