@@ -1,5 +1,8 @@
 import React from 'react'
 import Proyek from '../../components/Proyek'
+import { useContext } from 'react'
+import { ThemeContext } from '../../../Theme'
+
 
 const projek = [
     {
@@ -18,8 +21,11 @@ const projek = [
 ]
 
 const Portfolio = () => {
+  const {theme, setTheme} = useContext(ThemeContext)
+  const sect = `pt-36 pb-16 bg-slate-100 ${theme === 'dark' ? 'bg-slate-700' : 'bg-white'}`
+
   return (
-    <section id='portfolio' className='pt-36 pb-16 bg-slate-100'>
+    <section id='portfolio' className={sect}>
       <div className="container">
         <div className="w-full px-4">
           <div className="max-w-xl mx-auto text-center mb-16">

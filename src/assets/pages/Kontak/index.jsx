@@ -1,8 +1,14 @@
 import React from 'react'
+import { useContext } from 'react'
+import { ThemeContext } from '../../../Theme'
+
 
 const Kontak = () => {
+  const {theme, setTheme} = useContext(ThemeContext)
+  const sect = `pt-36 pb-32 ${theme === 'dark' ? 'bg-slate-700' : 'bg-white'}`
+
   return (
-        <section id='kontak' className='pt-36 pb-32'>
+        <section id='kontak' className={sect}>
       <div className="container">
         <div className='w-full px-4'>
             <div className="max-w-xl mx-auto text-center mb-16">

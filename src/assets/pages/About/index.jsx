@@ -2,10 +2,16 @@ import React from 'react'
 import {FaInstagram} from "react-icons/fa"
 import {BsGithub} from "react-icons/bs"
 import {BsLinkedin} from "react-icons/bs"
+import { useContext } from 'react'
+import { ThemeContext } from '../../../Theme'
+
 
 const About = () => {
+  const {theme, setTheme} = useContext(ThemeContext)
+  const sect = `pt-36 pb-32 ${theme === 'dark' ? 'bg-slate-700' : 'bg-white'}`
+
   return (
-    <section id='about' className='pt-36 pb-32'>
+    <section id='about' className={sect}>
       <div className="container">
         <div className="flex flex-wrap">
           <div className="w-full px-4 mb-10 lg:w-1/2">
