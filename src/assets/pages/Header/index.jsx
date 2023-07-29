@@ -28,6 +28,7 @@ const Header = () => {
   const buttonClasses = `block absolute right-4 lg:hidden ${isActive ? 'hamburger-active' : ''}`;
   const head = `bg-opacity-80  fixed top-0 left-0 w-full  z-10 shadow', ${theme=== 'light'? 'bg-white': "bg-slate-500"}`
   const navMel = ` absolute py-5 bg-white shadow-lg rounded-lg max-w-[250px] w-full right-4 top-full lg:block lg:static lg:max-w-full lg:bg-transparent lg:shadow-none lg:rounded-none ${isMenuActive ? 'hidden' : ''}`
+  
   return (
     <header className={head}>
       <div className='flex items-center'>
@@ -60,8 +61,6 @@ const Header = () => {
               </ul>
             </nav>
           </div>
-            {/* <button className='text-base text-dark py-2 mx-8 flex hover:text-primary' onClick={()=> setLanguage("id")}>Indonesia</button>
-            <button className='text-base text-dark py-2 mx-8 flex hover:text-primary' onClick={()=> setLanguage("en")}>Inggris</button> */}
             <div className='flex justify-center items-center'>
               <button className='mt-2 mr-5' onClick={()=> setTheme(theme === 'light' ? 'dark' : 'light')}>
                 {
@@ -76,7 +75,7 @@ const Header = () => {
       </div>
       </div>
       {showSelectOption && (
-        <div className='w-full absolute flex justify-end pb-3 px-16'>
+        <div className='w-full absolute flex justify-end pb-3 px-16 '>
           <select onChange={(e)=> setLanguage(e.target.value)}>
             <option value="id" >Indonesia</option>
             <option value="en" >Inggris</option>
