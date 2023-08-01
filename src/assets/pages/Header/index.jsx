@@ -7,6 +7,9 @@ import {GrLanguage} from "react-icons/gr"
 import { useContext } from 'react';
 import { ThemeContext } from '../../../Theme';
 import { Language, LanguageContext } from '../../../App';
+import { useRef} from 'react';
+import { useEffect } from 'react';
+import {FaArrowCircleUp} from 'react-icons/fa'
 
 const Header = () => {
   const {language, setLanguage} = useContext(LanguageContext)
@@ -14,6 +17,7 @@ const Header = () => {
   const [isActive, setIsActive] = useState(false);
   const [isMenuActive, setIsMenuActive] = useState(true);
   const [showSelectOption, setShowSelectOption] = useState(false)
+  const scrollButtonRef = useRef(null)
 
   function toggleSelectOption (){
     setShowSelectOption(!showSelectOption)
@@ -24,6 +28,40 @@ const Header = () => {
     setIsMenuActive(!isMenuActive)
   };
 
+  const ScrollTop = () => {
+    window.scrollTo({
+      top: 0,
+      behavior: 'smooth'
+    })
+  }
+
+  const handleScroll = () => {
+    if(scrollButtonRef.current){
+      const {current: button} = scrollButtonRef;
+      if(window.scrollY > 300){
+        button.classList.remove('hidden')
+      }else{
+        button.classList.add('hidden')
+      }
+    }
+  }
+
+  const handleAllert = () => {
+    if(theme === 'light'){
+      console.log("Thema Terang")
+    }else{
+      console.log("Thema Gelap");
+    }
+  }
+
+  useEffect(()=> {
+    window.addEventListener('scroll', handleScroll);
+    return () => window.removeEventListener('scroll', handleScroll);
+  }, [])
+
+  useEffect(()=>{
+    handleAllert()
+  }, [theme])
 
   const buttonClasses = `block absolute right-4 lg:hidden ${isActive ? 'hamburger-active' : ''}`;
   const head = `bg-opacity-80  fixed top-0 left-0 w-full  z-10 shadow', ${theme=== 'light'? 'bg-white': "bg-slate-500"}`
@@ -71,6 +109,7 @@ const Header = () => {
                 <GrLanguage size={24}/>
               </button>
             </div>
+            <button ref={scrollButtonRef} onClick={ScrollTop} className='fixed bottom-5 right-5 p-4 rounded-fullcursor-pointer hidden'><FaArrowCircleUp size={26}/></button>
         </div>
       </div>
       </div>
